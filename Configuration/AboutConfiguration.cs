@@ -16,7 +16,6 @@ namespace celilcavus.Configuration
 
            builder.Property(x=>x.Description).HasMaxLength(750);
            builder.Property(x=>x.Description).IsRequired();
-
         }
     }
 }
