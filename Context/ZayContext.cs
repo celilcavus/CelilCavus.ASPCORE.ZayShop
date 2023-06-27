@@ -6,6 +6,10 @@ namespace celilcavus.Context
 {
     public class ZayContext : DbContext
     {
+        public ZayContext(DbContextOptions<ZayContext> options) : base(options)
+        {
+
+        }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Brands> Brands { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -18,18 +22,18 @@ namespace celilcavus.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           modelBuilder.ApplyConfiguration(new AboutConfiguration());
-           modelBuilder.ApplyConfiguration(new BrandConfiguration());
-           modelBuilder.ApplyConfiguration(new CategoryConfiguration());
-           modelBuilder.ApplyConfiguration(new ColorConfiguration());
-           modelBuilder.ApplyConfiguration(new CommunicationConfiguration());
-           modelBuilder.ApplyConfiguration(new ContactConfiguration());
-           modelBuilder.ApplyConfiguration(new ProductConfiguration());
-           modelBuilder.ApplyConfiguration(new ServicesConfiguration());
-           modelBuilder.ApplyConfiguration(new SocialAcountConfiguration());
+            modelBuilder.ApplyConfiguration(new AboutConfiguration());
+            modelBuilder.ApplyConfiguration(new BrandConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new ColorConfiguration());
+            modelBuilder.ApplyConfiguration(new CommunicationConfiguration());
+            modelBuilder.ApplyConfiguration(new ContactConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new ServicesConfiguration());
+            modelBuilder.ApplyConfiguration(new SocialAcountConfiguration());
         }
-       
+
     }
 
-    
+
 }
